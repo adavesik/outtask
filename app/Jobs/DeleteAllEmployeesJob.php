@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Employee;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -26,6 +27,8 @@ class DeleteAllEmployeesJob implements ShouldQueue
     public function handle(): void
     {
         //TODO Need to double check may I need to use row-by-row delete
-        Employee::truncate();
+        Employee::query()->each(function ($employee) {
+            $employee->delete();
+        });
     }
 }
