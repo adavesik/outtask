@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Employee Management</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.2.4/dist/tailwind.min.css" rel="stylesheet">
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <!-- stylesheet -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+    />
+
+    <!-- Ripple Effect from cdn -->
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/ripple.js"></script>
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto p-4">
@@ -14,6 +27,54 @@
             <button id="syncApiBtn" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Sync API</button>
             <button id="deleteEmployeesBtn" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Delete Employees</button>
         </div>
+    </div>
+
+    <div class="shadow-lg rounded-lg overflow-hidden mx-4 md:mx-10">
+        <table class="w-full table-fixed">
+            <thead>
+            <tr class="bg-gray-100">
+                <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Name</th>
+                <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Email</th>
+                <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Phone</th>
+                <th class="w-1/4 py-4 px-6 text-left text-gray-600 font-bold uppercase">Status</th>
+            </tr>
+            </thead>
+            <tbody class="bg-white">
+            <tr>
+                <td class="py-4 px-6 border-b border-gray-200">John Doe</td>
+                <td class="py-4 px-6 border-b border-gray-200 truncate">johndoe@gmail.com</td>
+                <td class="py-4 px-6 border-b border-gray-200">555-555-5555</td>
+                <td class="py-4 px-6 border-b border-gray-200">
+                    <span class="bg-green-500 text-white py-1 px-2 rounded-full text-xs">Active</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="py-4 px-6 border-b border-gray-200">Jane Doe</td>
+                <td class="py-4 px-6 border-b border-gray-200 truncate">janedoe@gmail.com</td>
+                <td class="py-4 px-6 border-b border-gray-200">555-555-5555</td>
+                <td class="py-4 px-6 border-b border-gray-200">
+                    <span class="bg-red-500 text-white py-1 px-2 rounded-full text-xs">Inactive</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="py-4 px-6 border-b border-gray-200">Jane Doe</td>
+                <td class="py-4 px-6 border-b border-gray-200 truncate">janedoe@gmail.com</td>
+                <td class="py-4 px-6 border-b border-gray-200">555-555-5555</td>
+                <td class="py-4 px-6 border-b border-gray-200">
+                    <span class="bg-red-500 text-white py-1 px-2 rounded-full text-xs">Inactive</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="py-4 px-6 border-b border-gray-200">Jane Doe</td>
+                <td class="py-4 px-6 border-b border-gray-200 truncate">janedoe@gmail.com</td>
+                <td class="py-4 px-6 border-b border-gray-200">555-555-5555</td>
+                <td class="py-4 px-6 border-b border-gray-200">
+                    <span class="bg-red-500 text-white py-1 px-2 rounded-full text-xs">Inactive</span>
+                </td>
+            </tr>
+            <!-- Add more rows here -->
+            </tbody>
+        </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
